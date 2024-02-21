@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A Simple Game</title>
+    <style>
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canv">
+    </canvas>
+
+
+    <script src="/engine/static/Time.js"></script>
+    <script src="/engine/static/Globals.js"></script>
+    <script src="/engine/static/Input.js"></script>
+    <script src="/engine/static/Collisions.js"></script>
+    
+    <script src="/engine/classes/Scene.js"></script>
+    <script src="/engine/classes/GameObject.js"></script>
+    <script src="/engine/classes/Component.js"></script>
+
+    <script src="/engine/components/Transform.js"></script>
+    <script src="/engine/components/Circle.js"></script>
+
+    <script src="/game/ScoreGameObject.js"></script>
+    <script src="/game/CircleGameObject.js"></script>
+    <script src="/game/DeathGameObject.js"></script>
+    <script src="/game/ScoreUpdaterGameObject.js"></script>
+    <script src="/game/DeathTextGameObject.js"></script>
+    <script src="/game/EndSceneGameObject.js"></script>
+
+    <script src="/game/components/DeathComponent.js"></script>
+    <script src="/game/components/KeyboardComponent.js"></script>
+
+    <script>
+
+        Globals.score = 0;
+
+        /** The main scene in our game */
+        class MainScene extends Scene {
+            constructor() {
+                super("lightgray")
+
+                let circleGameObject = new CircleGameObject()
+                this.gameObjects.push(circleGameObject)
+                
+                let deathGameObject = new DeathGameObject()
+                this.gameObjects.push(deathGameObject)
+
+                let deathGameObject2 = new DeathGameObject()
+                deathGameObject2.transform.x = 300
+                deathGameObject2.transform.y = 200
+                this.gameObjects.push(deathGameObject2)
+                
+                let scoreUpdaterGameObject = new ScoreUpdaterGameObject()
+                this.gameObjects.push(scoreUpdaterGameObject)
+
+                let scoreGameObject = new ScoreGameObject()
+                this.gameObjects.push(scoreGameObject)
+            }
+        }
+
+        /** The final scene in our game */
+        class DeadScene extends Scene {
+            constructor() {
+                super("black")
+                
+                let scoreGameObject = new ScoreGameObject()
+                this.gameObjects.push(scoreGameObject)
+
+                let deathTextGameObject = new DeathTextGameObject()
+                this.gameObjects.push(deathTextGameObject)
+
+                let endSceneGameObject = new EndSceneGameObject()
+                this.gameObjects.push(endSceneGameObject)
+            }
+        }
+
+        let mainScene = new MainScene();
+        let deadScene = new DeadScene();
+
+        let currentScene = mainScene;
+
+        
+
+        /**
+         * The game loop.
+         * The game loop calls update and draw using a timer
+         */
+        function gameLoop() {
+            let canvas = document.querySelector("#canv")
+            let ctx = canvas.getContext("2d")
+
+            //Make the canvas the same size as our window
+            //so it is "full screen"
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+
+            // Update the current scene
+            currentScene.update()
+
+            //Draw in world space
+            currentScene.draw(ctx)
+
+            //Draw in Screen/UI space
+            //currentScene.drawUI(ctx)
+        }
+
+        /** Setup the game **/
+        function setup() {
+            document.addEventListener("keydown", Input.keydown)
+            document.addEventListener("keyup", Input.keyup)
+
+            document.addEventListener("mousemove", Input.mousemove)
+
+
+            //In the background, create a thread and call
+            //gameLoop every 100ms.
+
+            setInterval(gameLoop, Time.ms)
+        }
+
+        setup()
+
+    </script>
+</body>
+
+</html>
