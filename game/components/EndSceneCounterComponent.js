@@ -1,3 +1,10 @@
+import Engine from "/engine/Engine.js"
+import Component from "/engine/classes/Component.js"
+import Time from "/engine/static/Time.js"
+import Globals from "/engine/static/Globals.js"
+import MainScene from "../scenes/MainScene.js"
+
+
 class EndSceneCounterComponent extends Component{
   constructor(){
     super();
@@ -13,3 +20,5 @@ class EndSceneCounterComponent extends Component{
     }
   }
 }
+
+export default EndSceneCounterComponent

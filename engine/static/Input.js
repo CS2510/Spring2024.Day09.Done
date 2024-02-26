@@ -21,3 +21,5 @@ class Input {
             Input.keysDown.push(e.code)
     }
 }
+
+export default Input

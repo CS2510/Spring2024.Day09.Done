@@ -1,3 +1,5 @@
+import Transform from "/engine/components/Transform.js"
+
 class GameObject{
     components = []
     constructor(name){
@@ -35,3 +37,5 @@ class GameObject{
         }
     }
 }
+
+export default GameObject

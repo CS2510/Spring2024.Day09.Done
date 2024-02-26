@@ -1,3 +1,9 @@
+import Engine from "/engine/Engine.js"
+import Component from "/engine/classes/Component.js"
+import Collisions from "/engine/static/Collisions.js"
+import DeathScene from "../scenes/DeathScene.js"
+
+
 class DeathComponent extends Component {
     constructor(){
         super()
@@ -24,7 +30,9 @@ class DeathComponent extends Component {
 
 
         if (collision) {
-            Engine.currentScene = new DeadScene()
+            Engine.currentScene = new DeathScene()
         }
     }
 }
+
+export default DeathComponent

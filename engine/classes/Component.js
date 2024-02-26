@@ -4,3 +4,5 @@ class Component {
         return this.parent.transform;
     }
 }
+
+export default Component

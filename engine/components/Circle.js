@@ -1,3 +1,5 @@
+import Component from "/engine/classes/Component.js"
+
 class Circle extends Component {
     constructor(fill = "green", stroke = "purple") {
         super()
@@ -14,3 +16,5 @@ class Circle extends Component {
         ctx.stroke()
     }
 }
+
+export default Circle;

@@ -1,5 +1,7 @@
-class Text extends Component{
-  constructor(text="", font="30px sans", fill="gray"){
+import Component from "/engine/classes/Component.js"
+
+class Text extends Component {
+  constructor(text = "", font = "30px sans", fill = "gray") {
     super();
     this.text = text;
     this.font = font;
@@ -10,5 +12,7 @@ class Text extends Component{
     ctx.fillStyle = this.fill
     ctx.font = this.font
     ctx.fillText(this.text, this.transform.x, this.transform.y)
+  }
 }
-}
+
+export default Text;

@@ -1,3 +1,11 @@
+import Scene from "/engine/classes/Scene.js"
+import GameObject from "/engine/classes/GameObject.js"
+import DeathComponent from "../components/DeathComponent.js"
+import Circle from "/engine/components/Circle.js"
+import KeyboardComponent from "../components/KeyboardComponent.js"
+import ScoreUpdaterComponent from "../components/ScoreUpdaterComponent.js"
+import Text from "/engine/components/Text.js"
+
 /** The main scene in our game */
 class MainScene extends Scene {
   constructor() {
@@ -30,3 +38,5 @@ class MainScene extends Scene {
       this.gameObjects.push(scoreGameObject)
   }
 }
+
+export default MainScene

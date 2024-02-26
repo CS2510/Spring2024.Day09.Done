@@ -15,31 +15,9 @@
     <canvas id="canv">
     </canvas>
 
-    <script src="/engine/Engine.js"></script>
-
-    <script src="/engine/static/Time.js"></script>
-    <script src="/engine/static/Globals.js"></script>
-    <script src="/engine/static/Input.js"></script>
-    <script src="/engine/static/Collisions.js"></script>
-    
-    <script src="/engine/classes/Scene.js"></script>
-    <script src="/engine/classes/GameObject.js"></script>
-    <script src="/engine/classes/Component.js"></script>
-
-    <script src="/engine/components/Transform.js"></script>
-    <script src="/engine/components/Circle.js"></script>
-    <script src="/engine/components/Text.js"></script>
-
-    <script src="/game/components/DeathComponent.js"></script>
-    <script src="/game/components/KeyboardComponent.js"></script>
-    <script src="/game/components/ScoreUpdaterComponent.js"></script>
-    <script src="/game/components/ScoreReaderComponent.js"></script>
-    <script src="/game/components/EndSceneCounterComponent.js"></script>
-
-    <script src="/game/scenes/MainScene.js"></script>
-    <script src="/game/scenes/DeathScene.js"></script>
-
-    <script>
+    <script type="module">
+        import Engine from "/engine/Engine.js"
+        import MainScene from "./scenes/MainScene.js"
         Engine.currentScene = new MainScene();
 
         Engine.setup()

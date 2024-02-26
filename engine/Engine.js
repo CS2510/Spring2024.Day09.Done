@@ -1,3 +1,7 @@
+import Input from "/engine/static/Input.js"
+import Time from "/engine/static/Time.js"
+
+
 class Engine {
   /**
          * The game loop.
@@ -38,3 +42,5 @@ class Engine {
     setInterval(Engine.gameLoop, Time.ms)
   }
 }
+
+export default Engine;

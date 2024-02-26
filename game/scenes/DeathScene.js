@@ -1,5 +1,11 @@
+import Scene from "/engine/classes/Scene.js"
+import GameObject from "/engine/classes/GameObject.js"
+import Text from "/engine/components/Text.js"
+import ScoreReaderComponent from "../components/ScoreReaderComponent.js"
+import EndSceneCounterComponent from "../components/EndSceneCounterComponent.js"
+
 /** The final scene in our game */
-class DeadScene extends Scene {
+class DeathScene extends Scene {
   constructor() {
       super("black")
       
@@ -21,3 +27,5 @@ class DeadScene extends Scene {
       this.gameObjects.push(endSceneGameObject)
   }
 }
+
+export default DeathScene
