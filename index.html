@@ -102,8 +102,12 @@
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
 
+            currentScene.start(ctx);
+
+            //currentScene.mouseMove
+
             // Update the current scene
-            currentScene.update()
+            currentScene.update(ctx)
 
             //Draw in world space
             currentScene.draw(ctx)

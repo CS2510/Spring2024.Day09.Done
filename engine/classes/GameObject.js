@@ -17,6 +17,13 @@ class GameObject{
         this.components.push(component);
         component.parent = this;
     }
+    start(ctx){
+        for(let component of this.components){
+            if(component.start){
+                component.start(ctx)
+            }
+        }
+    }
     update(ctx){
         for(let component of this.components){
             if(component.update){
