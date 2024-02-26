@@ -38,33 +38,13 @@
     <script src="/game/components/DeathComponent.js"></script>
     <script src="/game/components/KeyboardComponent.js"></script>
 
+    <script src="/game//MainScene.js"></script>
+
     <script>
 
         Globals.score = 0;
 
-        /** The main scene in our game */
-        class MainScene extends Scene {
-            constructor() {
-                super("lightgray")
-
-                let circleGameObject = new CircleGameObject()
-                this.gameObjects.push(circleGameObject)
-                
-                let deathGameObject = new DeathGameObject()
-                this.gameObjects.push(deathGameObject)
-
-                let deathGameObject2 = new DeathGameObject()
-                deathGameObject2.transform.x = 300
-                deathGameObject2.transform.y = 200
-                this.gameObjects.push(deathGameObject2)
-                
-                let scoreUpdaterGameObject = new ScoreUpdaterGameObject()
-                this.gameObjects.push(scoreUpdaterGameObject)
-
-                let scoreGameObject = new ScoreGameObject()
-                this.gameObjects.push(scoreGameObject)
-            }
-        }
+        
 
         /** The final scene in our game */
         class DeadScene extends Scene {

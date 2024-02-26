@@ -16,6 +16,8 @@ class DeathComponent extends Component {
             }
         }
 
+        if(!circleGameObject) return;
+
         let collision = Collisions.isCircleCircleCollision(
             { x: this.transform.x, y: this.transform.y },
             { x: circleGameObject.transform.x, y: circleGameObject.transform.y },
