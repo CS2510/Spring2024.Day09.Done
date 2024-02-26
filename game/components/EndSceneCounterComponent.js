@@ -9,7 +9,7 @@ class EndSceneCounterComponent extends Component{
     this.timeSinceDeath += Time.ms
     if (this.timeSinceDeath > 2000) {
         Globals.score = 0
-        currentScene = new MainScene()
+        Engine.currentScene = new MainScene()
     }
   }
 }

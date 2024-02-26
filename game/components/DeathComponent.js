@@ -8,7 +8,7 @@ class DeathComponent extends Component {
     update() {
 
         let circleGameObject = null;
-        for (let gameObject of currentScene.gameObjects) {
+        for (let gameObject of Engine.currentScene.gameObjects) {
             if (gameObject.name == "CircleGameObject") {
                 circleGameObject = gameObject
             }
@@ -24,7 +24,7 @@ class DeathComponent extends Component {
 
 
         if (collision) {
-            currentScene = new DeadScene()
+            Engine.currentScene = new DeadScene()
         }
     }
 }

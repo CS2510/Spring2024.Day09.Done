@@ -15,6 +15,7 @@
     <canvas id="canv">
     </canvas>
 
+    <script src="/engine/Engine.js"></script>
 
     <script src="/engine/static/Time.js"></script>
     <script src="/engine/static/Globals.js"></script>
@@ -39,51 +40,9 @@
     <script src="/game/scenes/DeathScene.js"></script>
 
     <script>
+        Engine.currentScene = new MainScene();
 
-        Globals.score = 0;
-
-        let currentScene = new MainScene();
-        /**
-         * The game loop.
-         * The game loop calls update and draw using a timer
-         */
-        function gameLoop() {
-            let canvas = document.querySelector("#canv")
-            let ctx = canvas.getContext("2d")
-
-            //Make the canvas the same size as our window
-            //so it is "full screen"
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
-
-            currentScene.start(ctx);
-
-            // Update the current scene
-            currentScene.update(ctx)
-
-            //Draw in world space
-            currentScene.draw(ctx)
-
-            //Draw in Screen/UI space
-            //currentScene.drawUI(ctx)
-        }
-
-        /** Setup the game **/
-        function setup() {
-            document.addEventListener("keydown", Input.keydown)
-            document.addEventListener("keyup", Input.keyup)
-
-            document.addEventListener("mousemove", Input.mousemove)
-
-
-            //In the background, create a thread and call
-            //gameLoop every 100ms.
-
-            setInterval(gameLoop, Time.ms)
-        }
-
-        setup()
-
+        Engine.setup()
     </script>
 </body>
 
