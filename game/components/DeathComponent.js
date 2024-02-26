@@ -1,17 +1,15 @@
 class DeathComponent extends Component {
     constructor(){
         super()
-        console.log("Hi from DeathComponent constructor.")
     }
     start(){
-        console.log("Hi from start function in death component.")
     }
 
     update() {
 
         let circleGameObject = null;
         for (let gameObject of currentScene.gameObjects) {
-            if (gameObject.constructor.name == "CircleGameObject") {
+            if (gameObject.name == "CircleGameObject") {
                 circleGameObject = gameObject
             }
         }

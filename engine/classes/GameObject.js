@@ -1,13 +1,9 @@
 class GameObject{
     components = []
-    constructor(){
+    constructor(name){
+        this.name = name
         this.addComponent(new Transform())
     }
-
-    // gameObject.components.push({})
-    // gameObject.addComponent({})
-    // gameObject.transform -> gameObject.setTransform({})
-    // 
 
     get transform(){
         return this.components[0]

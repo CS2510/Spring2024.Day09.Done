@@ -1,7 +1,6 @@
 class KeyboardComponent extends Component{
     constructor(){
         super();
-        console.log("Hi from Keyboard Component constructor.")
     }
     update() {
         let speed = 100
