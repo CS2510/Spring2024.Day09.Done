@@ -1,5 +1,15 @@
-import Input from "/engine/static/Input.js"
-import Time from "/engine/static/Time.js"
+import "/engine/classes/Component.js"
+import "/engine/classes/GameObject.js"
+import "/engine/classes/Scene.js"
+
+import "/engine/components/Circle.js"
+import "/engine/components/Text.js"
+import "/engine/components/Transform.js"
+
+import "/engine/static/Collisions.js"
+import "/engine/static/Input.js"
+import "/engine/static/Globals.js"
+import "/engine/static/Time.js"
 
 
 class Engine {
@@ -43,4 +53,5 @@ class Engine {
   }
 }
 
+window.Engine = Engine
 export default Engine;

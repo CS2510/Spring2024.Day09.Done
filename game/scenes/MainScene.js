@@ -1,10 +1,6 @@
-import Scene from "/engine/classes/Scene.js"
-import GameObject from "/engine/classes/GameObject.js"
-import DeathComponent from "../components/DeathComponent.js"
-import Circle from "/engine/components/Circle.js"
-import KeyboardComponent from "../components/KeyboardComponent.js"
-import ScoreUpdaterComponent from "../components/ScoreUpdaterComponent.js"
-import Text from "/engine/components/Text.js"
+import "../components/DeathComponent.js"
+import "../components/KeyboardComponent.js"
+import "../components/ScoreUpdaterComponent.js"
 
 /** The main scene in our game */
 class MainScene extends Scene {
@@ -39,4 +35,5 @@ class MainScene extends Scene {
   }
 }
 
+window.MainScene = MainScene
 export default MainScene

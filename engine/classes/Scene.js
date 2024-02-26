@@ -36,4 +36,5 @@ class Scene {
     }
 }
 
+window.Scene = Scene
 export default Scene

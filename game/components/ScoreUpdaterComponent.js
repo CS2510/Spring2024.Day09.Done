@@ -1,6 +1,3 @@
-import Component from "/engine/classes/Component.js"
-import Globals from "/engine/static/Globals.js"
-
 class ScoreUpdaterComponent extends Component {
   start(){
     Globals.score = 0;
@@ -11,4 +8,5 @@ class ScoreUpdaterComponent extends Component {
   }
 }
 
+window.ScoreUpdaterComponent = ScoreUpdaterComponent
 export default ScoreUpdaterComponent;

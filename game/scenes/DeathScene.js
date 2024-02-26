@@ -1,8 +1,5 @@
-import Scene from "/engine/classes/Scene.js"
-import GameObject from "/engine/classes/GameObject.js"
-import Text from "/engine/components/Text.js"
-import ScoreReaderComponent from "../components/ScoreReaderComponent.js"
-import EndSceneCounterComponent from "../components/EndSceneCounterComponent.js"
+import "../components/ScoreReaderComponent.js"
+import "../components/EndSceneCounterComponent.js"
 
 /** The final scene in our game */
 class DeathScene extends Scene {
@@ -28,4 +25,5 @@ class DeathScene extends Scene {
   }
 }
 
+window.DeathScene = DeathScene
 export default DeathScene

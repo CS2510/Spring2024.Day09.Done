@@ -1,9 +1,3 @@
-import Engine from "/engine/Engine.js"
-import Component from "/engine/classes/Component.js"
-import Collisions from "/engine/static/Collisions.js"
-import DeathScene from "../scenes/DeathScene.js"
-
-
 class DeathComponent extends Component {
     constructor(){
         super()
@@ -35,4 +29,5 @@ class DeathComponent extends Component {
     }
 }
 
+window.DeathComponent = DeathComponent;
 export default DeathComponent

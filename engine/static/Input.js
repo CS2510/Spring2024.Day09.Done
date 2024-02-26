@@ -22,4 +22,5 @@ class Input {
     }
 }
 
+window.Input = Input
 export default Input

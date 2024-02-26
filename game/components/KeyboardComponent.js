@@ -1,7 +1,3 @@
-import Component from "/engine/classes/Component.js"
-import Input from "/engine/static/Input.js"
-import Time from "/engine/static/Time.js"
-
 class KeyboardComponent extends Component{
     constructor(){
         super();
@@ -21,4 +17,5 @@ class KeyboardComponent extends Component{
     }
 }
 
+window.KeyboardComponent = KeyboardComponent;
 export default KeyboardComponent

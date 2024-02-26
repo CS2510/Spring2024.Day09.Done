@@ -1,5 +1,3 @@
-import Component from "/engine/classes/Component.js"
-
 class Circle extends Component {
     constructor(fill = "green", stroke = "purple") {
         super()
@@ -17,4 +15,5 @@ class Circle extends Component {
     }
 }
 
+window.Circle = Circle
 export default Circle;

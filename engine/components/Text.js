@@ -1,5 +1,3 @@
-import Component from "/engine/classes/Component.js"
-
 class Text extends Component {
   constructor(text = "", font = "30px sans", fill = "gray") {
     super();
@@ -15,4 +13,5 @@ class Text extends Component {
   }
 }
 
+window.Text = Text
 export default Text;

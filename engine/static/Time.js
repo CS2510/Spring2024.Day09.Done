@@ -3,4 +3,5 @@ class Time {
     static fps = 1000 / Time.ms;
 }
 
+window.Time = Time
 export default Time;
